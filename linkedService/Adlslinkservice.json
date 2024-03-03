@@ -1,0 +1,11 @@
+{
+	"name": "Adlslinkservice",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://f1projectdata.dfs.core.windows.net/"
+		}
+	}
+}
