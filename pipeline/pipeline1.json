@@ -10,7 +10,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "Sadataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"sourcefile": {
+								"value": "@variables('sourceFileName')",
+								"type": "Expression"
+							}
+						}
 					},
 					"timeout": "0.00:10:00",
 					"sleep": 60
@@ -38,7 +44,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "Sadataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"sourcefile": {
+								"value": "@variables('sourceFileName')",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"columnCount"
@@ -122,13 +134,25 @@
 							"inputs": [
 								{
 									"referenceName": "Sadataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"sourcefile": {
+											"value": "@variables('sourceFileName')",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "Adlsdataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"destinationfile": {
+											"value": "@variables('destinationFileName')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -136,6 +160,16 @@
 				}
 			}
 		],
+		"variables": {
+			"sourceFileName": {
+				"type": "String",
+				"defaultValue": "population_by_age.tsv.zip"
+			},
+			"destinationFileName": {
+				"type": "String",
+				"defaultValue": "demo.tsv"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-03-03T00:02:58Z"
 	},

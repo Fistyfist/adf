@@ -5,12 +5,20 @@
 			"referenceName": "Adlslinkservice",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"destinationfile": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "demo.tsv",
+				"fileName": {
+					"value": "@dataset().destinationfile",
+					"type": "Expression"
+				},
 				"fileSystem": "destination-data"
 			},
 			"columnDelimiter": "\t",
